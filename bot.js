@@ -58,9 +58,6 @@ cliente.on('message_create', async mensagem => {
          mensagem.reply('A próxima imagem que você me enviar será transformada em figurinha automaticamente. 😁');
          usuariosAguardandoSticker.add(mensagem.from);
     }
-    if (mensagem.body == "!video") {
-        mensagem.reply('Envie o link do vídeo do youtube que irei te enviá-lo por aqui. 😁');
-    }
     if (usuariosAguardandoSticker.has(mensagem.from) && mensagem.hasMedia && mensagem.type === 'image') {
         usuariosAguardandoSticker.delete(mensagem.from);
         mensagem.reply("Carregando... ⏳");
